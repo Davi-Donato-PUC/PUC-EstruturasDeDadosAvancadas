@@ -91,7 +91,7 @@ Elemento* retirarElemento(Elemento* pElemento, char cor, int num) {
 }
 
 // Gere o processo de atualizar a lista conforme chegada e sa�da de pacientes
-Elemento* gerarListas(Elemento* pElemento, FILE* Arquivo) {
+Elemento* executarFila(Elemento* pElemento, FILE* Arquivo) {
     char cor; char es; int  num;
 
     while (fscanf(Arquivo, "%d %c %c\n", &num, &cor, &es) == 3) {
@@ -118,7 +118,7 @@ void main() {
     FILE* Arquivo = fopen("entrada.txt", "r");
     Elemento* Lista = NULL;
 
-    Lista = gerarListas(Lista, Arquivo);
+    Lista = executarFila(Lista, Arquivo);
 
     printf("LISTA FINAL:\n");
     exibirLista(Lista);
