@@ -71,18 +71,25 @@ Elemento* adicionarElemento(Elemento* pElemento, char cor, int num) {
     return pElemento;
 }
 
-// Retira um elemento
 Elemento* retirarElemento(Elemento* pElemento, char cor, int num) {
     printf("RETIRADO %s %d:\n", NC(cor), num);
- 
+
+    Elemento* aux;
     if (pElemento->pNext == NULL) return NULL;
 
-    if (pElemento->cor == cor && pElemento->num == num) return pElemento->pNext;
+    if (pElemento->cor == cor && pElemento->num == num) {
+        aux = pElemento->pNext;
+        free(pElemento);
+        return aux;
+    }
+
     Elemento* aux1 = pElemento, * aux2 = pElemento;
     while (aux2 != NULL) {
         if (aux2->cor == cor && aux2->num == num) {
+            aux = aux1->pNext;
             aux1->pNext = aux2->pNext;
-            return pElemento; 
+            free(aux);
+            return pElemento;
         }
         aux1 = aux2;
         aux2 = aux2->pNext;
@@ -115,7 +122,7 @@ Elemento* executarFila(Elemento* pElemento, FILE* Arquivo) {
 }
 
 void main() {
-    FILE* Arquivo = fopen("entrada.txt", "r");
+    FILE* Arquivo = fopen("Dados.txt", "r");
     Elemento* Lista = NULL;
 
     Lista = executarFila(Lista, Arquivo);
