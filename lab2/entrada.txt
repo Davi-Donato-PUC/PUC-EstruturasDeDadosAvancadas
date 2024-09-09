@@ -1,14 +1,14 @@
-1 - G E
-2 - R E
-3 - G E
-4 - Y E
-5 - R E
-6 - R E
-7 - G E
-8 - R E
-5 - R S
-4 - Y S
-9 - G E
-10 - Y E
-11 - R E
-12 - Y E
+1 G E
+2 R E
+3 G E
+4 Y E
+5 R E
+6 R E
+7 G E
+8 R E
+5 R S
+4 Y S
+9 G E
+10 Y E
+11 R E
+12 Y E

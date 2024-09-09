@@ -94,7 +94,7 @@ Elemento* retirarElemento(Elemento* pElemento, char cor, int num) {
 Elemento* gerarListas(Elemento* pElemento, FILE* Arquivo) {
     char cor; char es; int  num;
 
-    while (fscanf(Arquivo, "%d - %c %c\n", &num, &cor, &es) == 3) {
+    while (fscanf(Arquivo, "%d %c %c\n", &num, &cor, &es) == 3) {
         if (es == 'E') {
             pElemento = adicionarElemento(pElemento, cor, num);
             if (cor == 'R') r++;
